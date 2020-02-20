@@ -1,0 +1,18 @@
+<idea-plugin>
+    <id>com.sheepapps.vivabloc.vivabloc</id>
+    <name>Viva Block</name>
+    <version>1.0</version>
+    <vendor email="hello@sheep-apps.com" url="https://sheep-apps.com/">Sheep Apps LLC</vendor>
+
+    <description><![CDATA[
+        Simplify Flutter BLoC pattern development
+        ]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
