@@ -11,6 +11,11 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <defaultProjectTypeProvider type="Android"/>
+        <projectConfigurable
+                instance="ui.settings.SettingsViewImpl">
+        </projectConfigurable>
+        <projectService serviceInterface="data.component.VivaBLoCComponent" serviceImplementation="data.component.VivaBLoCComponent"/>
     </extensions>
 
     <actions>
