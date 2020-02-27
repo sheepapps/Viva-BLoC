@@ -1,3 +1,14 @@
+buildscript {
+    ext.kotlin_version = '1.3.61'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 plugins {
     id 'org.jetbrains.intellij' version '0.4.16'
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
@@ -6,18 +17,21 @@ plugins {
 group 'com.sheepapps.vivabloc'
 version '1.0'
 
+apply plugin: 'kotlin'
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2019.1.4'
+    plugins = ["Kotlin", "yaml", "Dart:$dartVersion", "io.flutter:$flutterVersion", "psiviewer:191.4212"]
     alternativeIdePath = project.hasProperty("StudioRunPath") ? StudioRunPath : StudioCompilePath
+    intellij.updateSinceUntilBuild false
 }
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
