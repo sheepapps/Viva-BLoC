@@ -1,4 +1,4 @@
-package model
+package com.sheepapps.vivabloc.models
 
 enum class Variable(val value: String, val description: String) {
     COMPONENT_NAME("%componentName%", "Component's name, e.g. Page, Screen or Fragment"),

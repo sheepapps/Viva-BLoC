@@ -1,8 +1,9 @@
-package util
+package com.sheepapps.vivabloc.utils
 
 import javax.swing.JTextField
 import javax.swing.event.DocumentEvent
 import javax.swing.event.DocumentListener
+import com.google.common.base.CaseFormat
 
 fun JTextField.addTextChangeListener(onChange: (String) -> Unit) =
     object : DocumentListener {
@@ -11,4 +12,4 @@ fun JTextField.addTextChangeListener(onChange: (String) -> Unit) =
         override fun removeUpdate(e: DocumentEvent?) = onChange(text)
     }.apply { document.addDocumentListener(this) }
 
-fun String.toSnakeCase() = replace(Regex("([^_A-Z])([A-Z])"), "$1_$2").toLowerCase()
+fun String.toSnakeCase(): String = CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, this)

@@ -1,8 +1,8 @@
-package data.repository
+package com.sheepapps.vivabloc.data.repository
 
 import com.intellij.openapi.project.Project
-import data.component.VivaBLoCComponent
-import model.Settings
+import com.sheepapps.vivabloc.data.component.VivaBLoCComponent
+import com.sheepapps.vivabloc.models.Settings
 
 interface SettingsRepository {
     fun loadSettings(): Settings

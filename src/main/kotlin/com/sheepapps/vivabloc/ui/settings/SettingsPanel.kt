@@ -1,4 +1,4 @@
-package ui.settings
+package com.sheepapps.vivabloc.ui.settings
 
 import com.intellij.ui.IdeBorderFactory
 import com.intellij.ui.components.labels.LinkLabel

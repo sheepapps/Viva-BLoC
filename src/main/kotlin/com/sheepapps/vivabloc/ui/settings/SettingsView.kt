@@ -1,4 +1,4 @@
-package ui.settings
+package com.sheepapps.vivabloc.ui.settings
 
 interface SettingsView {
     fun showComponentName(text: String)

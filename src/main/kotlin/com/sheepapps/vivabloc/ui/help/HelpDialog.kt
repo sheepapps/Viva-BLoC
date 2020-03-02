@@ -1,4 +1,4 @@
-package ui.help
+package com.sheepapps.vivabloc.ui.help
 
 import com.intellij.openapi.ui.DialogWrapper
 

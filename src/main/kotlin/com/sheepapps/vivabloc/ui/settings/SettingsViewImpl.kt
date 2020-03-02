@@ -1,10 +1,10 @@
-package ui.settings
+package com.sheepapps.vivabloc.ui.settings
 
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.project.Project
-import data.repository.SettingsRepositoryImpl
-import ui.help.HelpDialog
-import util.addTextChangeListener
+import com.sheepapps.vivabloc.data.repository.SettingsRepositoryImpl
+import com.sheepapps.vivabloc.ui.help.HelpDialog
+import com.sheepapps.vivabloc.utils.addTextChangeListener
 import javax.swing.JComponent
 import javax.swing.event.DocumentListener
 

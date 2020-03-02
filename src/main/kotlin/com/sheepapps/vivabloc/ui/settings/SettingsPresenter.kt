@@ -1,7 +1,7 @@
-package ui.settings
+package com.sheepapps.vivabloc.ui.settings
 
-import data.repository.SettingsRepository
-import model.Settings
+import com.sheepapps.vivabloc.data.repository.SettingsRepository
+import com.sheepapps.vivabloc.models.Settings
 
 class SettingsPresenter(private val view: SettingsView,
                         private val settingsRepository: SettingsRepository) {

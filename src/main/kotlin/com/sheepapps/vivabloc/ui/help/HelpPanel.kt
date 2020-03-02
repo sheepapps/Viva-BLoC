@@ -1,6 +1,6 @@
-package ui.help
+package com.sheepapps.vivabloc.ui.help
 
-import model.Variable
+import com.sheepapps.vivabloc.models.Variable
 import java.awt.BorderLayout
 import java.awt.FlowLayout
 import javax.swing.BoxLayout
