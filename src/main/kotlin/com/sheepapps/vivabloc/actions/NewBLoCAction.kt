@@ -3,11 +3,12 @@ package com.sheepapps.vivabloc.actions
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
+import com.intellij.openapi.util.IconLoader
 import com.intellij.psi.PsiDirectory
 import com.sheepapps.vivabloc.utils.FlutterProject
 import com.sheepapps.vivabloc.ui.newbloc.NewBLoCDialog
 
-class NewBLoCAction : AnAction() {
+class NewBLoCAction : AnAction(IconLoader.getIcon("/icons/new_bloc_icon.svg")) {
 
     override fun actionPerformed(event: AnActionEvent) {
         val project = event.project
