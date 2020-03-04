@@ -3,11 +3,17 @@ package com.sheepapps.vivabloc.ui.newbloc
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.psi.PsiDirectory
+import com.sheepapps.vivabloc.data.repository.SettingsRepositoryImpl
 import com.sheepapps.vivabloc.utils.BLoCFilesCreatorImpl
 
 class NewBLoCPresenter(private val view: NewBLoCView, project: Project, directory: PsiDirectory) {
 
     private val filesCreator = BLoCFilesCreatorImpl(project, directory)
+    private val defaultComponentName = SettingsRepositoryImpl(project).loadSettings().defaultComponentName
+
+    fun onLoadView() {
+        view.showComponentName(defaultComponentName)
+    }
 
     fun onOkClick(componentName: String, name: String) {
 

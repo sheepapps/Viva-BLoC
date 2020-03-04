@@ -1,0 +1,13 @@
+import 'dart:async';
+import 'package:bloc/bloc.dart';
+import '${NAME_SNAKE}_extras.dart';
+
+class ${NAME}Bloc extends Bloc<${NAME}Event, ${NAME}State> {
+
+    @override
+    ${NAME}State get initialState => ${NAME}State();
+
+    @override
+    Stream<${NAME}State> mapEventToState(${NAME}Event event) async* {}
+
+}

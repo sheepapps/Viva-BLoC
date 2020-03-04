@@ -21,7 +21,14 @@ class NewBLoCDialog(project: Project, directory: PsiDirectory) : DialogWrapper(t
             panel.componentNameTextField.text,
             panel.nameTextField.text)
 
-    override fun createCenterPanel(): JComponent = panel
+    override fun createCenterPanel(): JComponent {
+        presenter.onLoadView()
+        return panel
+    }
+
+    override fun showComponentName(componentName: String) {
+        panel.componentNameTextField.text = componentName
+    }
 
     override fun close() = close(OK_EXIT_CODE)
 }

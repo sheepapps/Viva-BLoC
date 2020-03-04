@@ -5,6 +5,7 @@ import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.sheepapps.vivabloc.models.BLoC
+import com.sheepapps.vivabloc.data.repository.SettingsRepositoryImpl
 
 object TemplateBuilder {
 
@@ -14,13 +15,15 @@ object TemplateBuilder {
 
     private object Properties {
         const val Name = "NAME"
-        const val ProjectName = "PROJECT_NAME"
-        const val ClassName = "CLASS_NAME"
+        const val NameSnakeCase = "NAME_SNAKE"
+        const val ComponentName = "COMPONENT_NAME"
+        const val InjectorPath = "INJECTOR_PATH"
     }
 
     fun build(bloc: BLoC, project: Project, destinationDirectory: PsiDirectory) {
         val manager = FileTemplateManager.getInstance(project)
-        val properties = buildProperties(manager.defaultProperties, bloc)
+        val injectorPath = SettingsRepositoryImpl(project).loadSettings().defaultInjectorFullPath
+        val properties = buildProperties(manager.defaultProperties, bloc, injectorPath)
 
         mapTemplates(bloc).forEach { template ->
             val fileTemplate = manager.getInternalTemplate(template.key.name.toLowerCase())
@@ -36,9 +39,12 @@ object TemplateBuilder {
         }
     }
 
-    private fun buildProperties(properties: java.util.Properties, bloc: BLoC) = properties.apply {
-        put(Properties.Name, bloc.name)
-        put(Properties.ProjectName, bloc.projectName)
-        put(Properties.ClassName, bloc.className)
+    private fun buildProperties(properties: java.util.Properties, bloc: BLoC,
+                                injectorPath: String) = properties.apply {
+        put(Properties.Name, bloc.className)
+        put(Properties.NameSnakeCase, bloc.name)
+        put(Properties.ComponentName, bloc.componentName)
+        put(Properties.InjectorPath, injectorPath)
     }
+
 }

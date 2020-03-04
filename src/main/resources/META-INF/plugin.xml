@@ -21,6 +21,11 @@
                 instance="com.sheepapps.vivabloc.ui.settings.SettingsViewImpl">
         </projectConfigurable>
         <projectService serviceInterface="com.sheepapps.vivabloc.data.component.VivaBLoCComponent" serviceImplementation="com.sheepapps.vivabloc.data.component.VivaBLoCComponent"/>
+
+        <!--        File Templates-->
+        <internalFileTemplate name="bloc"/>
+        <internalFileTemplate name="extras"/>
+        <internalFileTemplate name="screen"/>
     </extensions>
 
     <actions>

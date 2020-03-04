@@ -5,6 +5,7 @@ import com.sheepapps.vivabloc.utils.toSnakeCase
 data class BLoC(
     val name: String,
     val className: String,
+    val componentName: String,
     val projectName: String,
     val screenFilename: String,
     val blocFilename: String,
@@ -18,6 +19,7 @@ data class BLoC(
             return BLoC(
                 nameSnakeCase,
                 name,
+                componentName,
                 projectName,
                 "${nameSnakeCase}_${component}.dart",
                 "${nameSnakeCase}_bloc.dart",
