@@ -9,10 +9,33 @@
         ]]></description>
 
     <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>Dart</depends>
+    <depends>io.flutter</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <defaultProjectTypeProvider type="Android"/>
+        <projectConfigurable
+                instance="com.sheepapps.vivabloc.ui.settings.SettingsViewImpl">
+        </projectConfigurable>
+        <projectService serviceInterface="com.sheepapps.vivabloc.data.component.VivaBLoCComponent" serviceImplementation="com.sheepapps.vivabloc.data.component.VivaBLoCComponent"/>
+
+        <!--        File Templates-->
+        <internalFileTemplate name="bloc"/>
+        <internalFileTemplate name="extras"/>
+        <internalFileTemplate name="screen"/>
     </extensions>
 
     <actions>
+        <action id="VivaBLoC.NewBLoC"
+                class="com.sheepapps.vivabloc.actions.NewBLoCAction"
+                text="Flutter BLoC"
+                description="Create a new Flutter BLoC">
+            <add-to-group group-id="NewGroup"
+                          anchor="before"
+                          relative-to-action="NewFromTemplate"/>
+        </action>
     </actions>
 </idea-plugin>

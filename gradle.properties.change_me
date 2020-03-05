@@ -11,3 +11,8 @@ StudioCompilePath=/Applications/Android Studio.app/Contents
 # This is useful to test the plugin on older versions of Android Studio or Intellij
 # Default value: $StudioCompilePath
 #StudioRunPath=/Applications/Android Studio.app/Contents
+
+dartVersion=191.8593
+flutterVersion=43.0.1
+
+org.gradle.parallel=true
