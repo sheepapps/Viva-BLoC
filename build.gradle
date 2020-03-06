@@ -41,6 +41,10 @@ compileTestKotlin {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+    <h2>1.0</h2>
+    <ul>
+        <li>Added Flutter BLoC pattern template creation to the New File menu.</li>
+        <li>Added project-level settings panel.</li>
+    </ul>
+    """
 }
