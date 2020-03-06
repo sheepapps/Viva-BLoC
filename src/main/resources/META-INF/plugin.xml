@@ -3,6 +3,7 @@
     <name>Viva BLoC</name>
     <version>1.0</version>
     <vendor email="hello@sheep-apps.com" url="https://sheep-apps.com/">Sheep Apps LLC</vendor>
+    <idea-version since-build="183.6156"/>
 
     <description><![CDATA[
         <h3>Android Studio plugin to make Flutter mobile development easier</h3>
